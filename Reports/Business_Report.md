@@ -1,37 +1,39 @@
-Executive Summary
-Project Overview
+**Executive Summary
+**Project Overview
 
 This project analyzes the Sample Superstore retail dataset to evaluate overall business performance, customer purchasing behavior, regional sales, product profitability, and sales trends. The objective is to identify growth opportunities, improve profitability, and support strategic business decisions through SQL-based analysis.
 
-Business Question 1
-Overall Business Performance
+**Business Question 1
+**Overall Business Performance
 Business Objective
 
 Evaluate the company's overall performance using key business metrics.
 
-SQL
-
+**SQL
+**
 (Paste your query)
 
-Result
-KPI	Value
+**Result
+**KPI	Value
 Total Sales	₹2,297,201.07
 Total Profit	₹286,397.79
 Total Quantity Sold	37,873
 Total Orders	5,009
-Observation
-
+**Observation
+**
 The business generated ₹2.30 million in sales across 5,009 customer orders, resulting in ₹286,397.79 profit and selling 37,873 units.
 
-Business Insight
-
+**Business Insight
+**
 The company is profitable overall, indicating healthy operations. However, profit is only about 12.5% of total sales, suggesting there may be opportunities to improve margins by optimizing discounts, pricing, or product mix.
 
-Recommendation
+**Recommendation**
 Monitor profit margin regularly.
 Identify products with high sales but low profit.
 Reduce unnecessary discounts on low-margin products.
-Business Question 2
+
+**Business Question 2
+**
 Regional Sales Analysis
 Result
 Region	Sales
@@ -39,19 +41,21 @@ West	₹725,457.93
 East	₹678,781.36
 Central	₹501,239.88
 South	₹391,721.90
-Observation
-
+**Observation
+**
 The West region generated the highest sales, while the South region generated the lowest.
 
-Business Insight
-
+**Business Insight
+**
 The West region appears to have the strongest customer demand and revenue contribution. The South region may represent an opportunity for targeted business growth.
 
-Recommendation
-Prioritize inventory allocation for the West.
+**Recommendation
+**Prioritize inventory allocation for the West.
 Investigate why South underperforms.
 Evaluate regional marketing strategies.
-Business Question 3
+
+**Business Question 3
+**
 Top Revenue-Generating Cities
 Observation
 
@@ -62,37 +66,43 @@ Los Angeles
 Seattle
 San Francisco
 Philadelphia
-Business Insight
-
+**Business Insight
+**
 Revenue is concentrated in major metropolitan areas, suggesting these cities are the company's primary markets.
 
-Recommendation
+**Recommendation
+**
 Focus premium inventory in top-performing cities.
 Explore expansion strategies in nearby metropolitan regions.
 Analyze lower-performing cities to identify barriers to growth.
-Business Question 4
+
+**Business Question 4
+**
 Profit by Category
 Result
 Category	Profit
 Technology	₹145,455.66
 Office Supplies	₹122,490.88
 Furniture	₹18,451.25
-Observation
-
+**Observation
+**
 Technology generated the highest profit, whereas Furniture generated significantly lower profit despite being a major product category.
 
-Business Insight
-
+**Business Insight
+**
 Furniture may experience high operational costs, shipping expenses, or aggressive discounting that reduces profitability.
 
-Recommendation
+**Recommendation
+**
 Review Furniture pricing and discount strategies.
 Identify low-margin furniture products.
 Prioritize high-margin technology products.
-Business Question 5
-Top Performing Sub-Categories
-Observation
 
+**Business Question 5
+**
+Top Performing Sub-Categories
+**Observation
+**
 The highest-profit sub-categories include:
 
 Copiers
@@ -100,85 +110,91 @@ Phones
 Accessories
 Paper
 Binders
-Business Insight
-
+**Business Insight
+**
 Technology-related products consistently outperform other product groups, indicating strong customer demand and profitability.
 
-Recommendation
-
+**Recommendation
+**
 Increase marketing investment and inventory for high-performing technology products.
 
-Business Question 6
+**Business Question 6
+**
 Top Revenue-Generating Products
-Observation
-
+**Observation
+**
 The Canon imageCLASS 2200 Advanced Copier generated the highest sales, followed by premium office equipment.
 
-Business Insight
-
+**Business Insight
+**
 High-ticket enterprise products contribute substantially to total revenue despite relatively low sales volume.
 
-Recommendation
-
+**Recommendation
+**
 Maintain stock availability for premium products and develop upselling strategies targeting business customers.
 
-Business Question 7
+**Business Question 7
+**
 Top Customers
 Observation
 
 Sean Miller is the highest revenue-generating customer with purchases exceeding ₹25,000.
 
-Business Insight
-
+**Business Insight
+**
 A small number of customers contribute disproportionately to overall revenue.
 
-Recommendation
-
+**Recommendation
+**
 Implement customer loyalty programs and personalized promotions for high-value customers.
 
-Business Question 8
+**Business Question 8
+**
 High Revenue Categories
-Observation
-
+**Observation
+**
 All three categories generated sales greater than ₹500,000.
 
-Business Insight
-
+**Business Insight
+**
 Revenue is diversified across all product categories, reducing dependence on a single category.
 
-Recommendation
-
+**Recommendation
+**
 Continue balanced investment while focusing on improving profitability rather than only increasing sales.
 
-Business Question 9
+**Business Question 9
+**
 Profit Classification
-Observation
-
+**Observation
+**
 Technology and Office Supplies achieved medium profitability, while Furniture remained in the low-profit category.
 
-Business Insight
-
+**Business Insight
+**
 Furniture requires immediate attention to improve margins.
 
-Recommendation
-
+**Recommendation
+**
 Review supplier costs, shipping expenses, and discount policies for Furniture products.
 
-Business Question 10
+**Business Question 10
+**
 Top Products Within Each Category
-Observation
+**Observation**
 
 Technology products dominate the highest-selling items within their category.
 
-Business Insight
-
+**Business Insight
+**
 Premium technology products consistently outperform furniture and office products in revenue generation.
 
-Recommendation
-
+**Recommendation
+**
 Expand premium technology offerings while evaluating underperforming products.
 
-Business Question 11
+**Business Question 11
+**
 Monthly Sales Trend
 Observation
 
