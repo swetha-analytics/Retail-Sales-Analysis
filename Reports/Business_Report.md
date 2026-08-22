@@ -2,9 +2,14 @@
 
 ## Executive Summary
 
-This project analyzes the Sample Superstore retail dataset to evaluate overall business performance, customer purchasing behavior, regional sales, product profitability, and sales trends. The objective is to identify growth opportunities, improve profitability, and support strategic business decisions through SQL-based analysis.
+This project analyzes the Sample Superstore retail dataset to evaluate overall business performance, customer purchasing behavior, regional sales, product profitability, sales trends, shipping efficiency, and short-term sales forecasting. The objective is to identify growth opportunities, improve profitability, and support strategic business decisions through SQL and Python-based analysis.
 
-**Tools used:** SQL (MySQL) for querying · Python for data cleaning & EDA · Power BI for dashboarding
+**Tools used:** SQL (MySQL) for querying · Python/Pandas for cross-validation, shipping analysis & forecasting · Power BI for dashboarding
+
+**Project files:**
+- SQL queries: [`sql/retail_sales_analysis.sql`](./sql/retail_sales_analysis.sql)
+- Python notebooks: [`python/`](./python)
+- Dashboard: [`dashboard/`](./dashboard)
 
 ---
 
@@ -22,7 +27,9 @@ This project analyzes the Sample Superstore retail dataset to evaluate overall b
 10. [Top 3 Products Within Each Category](#10-top-3-products-within-each-category)
 11. [Monthly Sales Trend](#11-monthly-sales-trend)
 12. [Loss-Making Products](#12-loss-making-products)
-13. [Key Recommendations Summary](#key-recommendations-summary)
+13. [Shipping & Delivery Time Analysis (Python)](#13-shipping--delivery-time-analysis-python)
+14. [Sales Forecast — Next 3 Months (Python)](#14-sales-forecast--next-3-months-python)
+15. [Key Recommendations Summary](#key-recommendations-summary)
 
 ---
 
@@ -223,7 +230,61 @@ This project analyzes the Sample Superstore retail dataset to evaluate overall b
 
 ---
 
-*Additional analysis — including above-average customer sales/profit, order-value benchmarking, and high-frequency customer identification — is available in the SQL file (`sql/retail_sales_analysis.sql`, Business Questions 13–18).*
+*Additional SQL analysis — including above-average customer sales/profit, order-value benchmarking, and high-frequency customer identification — is available in the SQL file (`sql/retail_sales_analysis.sql`, Business Questions 13–18).*
+
+*Business Questions 1–7 above were also cross-validated in Python/Pandas. Two additional analyses go beyond what the SQL covers:*
+
+---
+
+## 13. Shipping & Delivery Time Analysis (Python)
+*Python reference: `python/analysis.ipynb`*
+
+**Business Objective:** Determine which Region + Ship Mode combinations have the longest average delivery times, to identify logistics bottlenecks.
+
+**Result**
+
+| Region | Ship Mode | Avg. Delivery (days) | Max Delivery (days) |
+|---|---|---|---|
+| West | Standard Class | 5.06 | 7 |
+| South | Standard Class | 5.00 | 7 |
+| Central | Standard Class | 4.99 | 7 |
+| East | Standard Class | 4.97 | 7 |
+| Central / East / South / West | Second Class | ~3.2–3.3 | 5 |
+| Central / East / South / West | First Class | ~2.1–2.3 | 3–4 |
+| All Regions | Same Day | ~0–0.1 | 0–1 |
+
+**Observation:** Standard Class is the slowest shipping option across **every single region**, averaging roughly 5 days — more than double First Class (~2.2 days). The West + Standard Class combination is the slowest overall (5.06 days average, 7-day maximum).
+
+**Business Insight:** Delivery time isn't driven by region — it's driven almost entirely by ship mode. This means logistics improvements should target the Standard Class shipping process itself (carrier, routing, fulfillment speed) rather than any specific region's infrastructure.
+
+**Recommendation:**
+- Audit the Standard Class fulfillment process specifically, since it's the bottleneck across all four regions, not a regional issue
+- Consider whether Standard Class delivery windows set customer expectations accurately, given the 7-day maximum
+- Evaluate cost/benefit of nudging more customers toward Second Class as a faster default option
+
+---
+
+## 14. Sales Forecast — Next 3 Months (Python)
+*Python reference: `python/analysis.ipynb`*
+
+**Business Objective:** Estimate expected sales for the next three months using a linear regression model on historical monthly sales, to support inventory and staffing planning.
+
+**Result**
+
+| Forecast Period | Predicted Sales |
+|---|---|
+| Month +1 | $69,957.54 |
+| Month +2 | $70,859.54 |
+| Month +3 | $71,761.55 |
+
+**Observation:** The model forecasts steady linear growth of approximately **$902 per month (~1.3% month-over-month)**, continuing the upward trend seen in the historical monthly sales data.
+
+**Business Insight:** The forecast confirms the positive trajectory observed in Business Question 11 (Monthly Sales Trend) — the business is not just seasonal, but on a genuine growth path independent of the Sep–Dec seasonal peak.
+
+**Recommendation:**
+- Use this forecast as a baseline for next-quarter inventory and staffing planning
+- Re-run the forecast monthly as new data comes in to catch any deviation from the linear trend early
+- Treat this as a conservative baseline — a linear model doesn't account for seasonality, so actual Q4-adjacent months may run higher than predicted
 
 ---
 
@@ -237,6 +298,8 @@ This project analyzes the Sample Superstore retail dataset to evaluate overall b
 | Customer Strategy | Build a loyalty program around top revenue-generating customers |
 | Seasonality | Plan inventory, staffing, and promotions around the Sep–Dec demand surge |
 | Risk Management | Audit and address consistently loss-making products (e.g. 3D printers, conference tables) |
+| Logistics | Audit Standard Class fulfillment process — it's the slowest shipping mode across all regions (~5 days avg) |
+| Growth Planning | Use the ~1.3% month-over-month forecasted growth as a baseline for inventory and staffing decisions |
 
 ---
 
