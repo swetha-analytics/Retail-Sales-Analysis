@@ -66,4 +66,4 @@ Retail-Sales-Analysis/
 ## Author
 
 **Swetha D**
-[GitHub](https://github.com/swetha-pixel) · [LinkedIn](#)
+
