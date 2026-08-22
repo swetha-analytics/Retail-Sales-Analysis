@@ -1,6 +1,6 @@
 /*==========================================================
   Project       : Retail Sales Analysis
-  Author        : Swetha Susan
+  Author        : Swetha D
   Database      : retail_sales_db
   Dataset       : Sample Superstore
   Description   : Business analysis using SQL to answer
