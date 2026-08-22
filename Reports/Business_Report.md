@@ -6,11 +6,6 @@ This project analyzes the Sample Superstore retail dataset to evaluate overall b
 
 **Tools used:** SQL (MySQL) for querying · Python for data cleaning & EDA · Power BI for dashboarding
 
-**Project files:**
-- SQL queries: [`sql/retail_sales_analysis.sql`](./sql/retail_sales_analysis.sql)
-- Python notebooks: [`python/`](./python)
-- Dashboard: [`dashboard/`](./dashboard)
-
 ---
 
 ## Table of Contents
